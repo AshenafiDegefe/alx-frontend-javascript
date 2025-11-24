@@ -1,10 +1,11 @@
-interface Teacher {
-    firstName: string;
-    lastName: string;
+interface Teacher{
+    readonly firstName: string;
+    readonly lastName: string;
     fullTimeEmployee: boolean;
-    yearsOfExprience: number;
+    yearsOfExprience?: number;
     location: string;
     contract: boolean;
+    data: any;
 }
 
 const teacher1: Teacher = {
@@ -13,22 +14,24 @@ const teacher1: Teacher = {
   lastName: 'Doe',
   location: 'London',
   contract: false,
-  yearsOfExprience: 5
+  yearsOfExprience: 5,
+  data: null
 };
 
 console.log(teacher1);
 
-interface Directors extends Teacher {
+interface Director extends Teacher {
     numberOfReports: number;
 }
-const director1: Directors = {
+const director1: Director = {
     firstName: 'Ashuu',
     lastName: 'Dege',
     location: 'Addis Ababa',
     fullTimeEmployee: false,
     yearsOfExprience: 3,
     contract: true,
-    numberOfReports: 18
+    numberOfReports: 18,
+    data: null
 }
 
 interface printTeacherFunction {
